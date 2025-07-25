@@ -1,0 +1,11 @@
+<!doctype html>
+<title>Login</title>
+<h2>Login do Desenvolvedor</h2>
+<form method="post">
+  <input type="text" name="username" placeholder="Usuário" required><br>
+  <input type="password" name="password" placeholder="Senha" required><br>
+  <input type="submit" value="Entrar">
+</form>
+{% if erro %}
+<p style="color:red;">{{ erro }}</p>
+{% endif %}

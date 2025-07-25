@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Anúncios</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .ad { border: 1px solid #ccc; padding: 10px; margin: 10px 0; cursor: pointer; }
+        .revenue { font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Anúncios de Investimentos</h1>
+
+    <div class="ad" onclick="trackRevenue()">📊 Investimento Imobiliário</div>
+    <div class="ad" onclick="trackRevenue()">📈 Cotas de Fundos</div>
+    <div class="ad" onclick="trackRevenue()">🔥 Investimentos de Alto Risco</div>
+
+    <div class="revenue">Receita total: R$ <span id="revenue">0.00</span></div>
+
+    <script>
+        let revenue = 0;
+        function trackRevenue() {
+            revenue += 2.5;
+            document.getElementById("revenue").innerText = revenue.toFixed(2);
+        }
+    </script>
+</body>
+</html>

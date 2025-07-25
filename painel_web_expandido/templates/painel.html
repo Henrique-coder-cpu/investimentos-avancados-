@@ -1,0 +1,26 @@
+<!doctype html>
+<title>Painel de Anúncios</title>
+<h2>Bem-vindo, {{ session['usuario'] }}</h2>
+<a href="{{ url_for('logout') }}">Sair</a>
+<h3>Anúncios</h3>
+<table border="1">
+<tr><th>ID</th><th>Título</th><th>Ganho (R$)</th><th>Ações</th></tr>
+{% for anuncio in anuncios %}
+<tr>
+  <td>{{ anuncio[0] }}</td>
+  <td>{{ anuncio[1] }}</td>
+  <td>{{ anuncio[2] }}</td>
+  <td>
+    <a href="{{ url_for('editar', id=anuncio[0]) }}">Editar</a> |
+    <a href="{{ url_for('excluir', id=anuncio[0]) }}">Excluir</a>
+  </td>
+</tr>
+{% endfor %}
+</table>
+<p>Total de ganhos: R$ {{ total }}</p>
+<h3>Adicionar novo anúncio</h3>
+<form method="post" action="{{ url_for('adicionar') }}">
+  <input type="text" name="titulo" placeholder="Título" required>
+  <input type="number" step="0.01" name="ganho" placeholder="Ganho" required>
+  <input type="submit" value="Adicionar">
+</form>

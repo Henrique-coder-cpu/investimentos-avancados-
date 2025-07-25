@@ -1,0 +1,9 @@
+<!doctype html>
+<title>Editar Anúncio</title>
+<h2>Editar Anúncio</h2>
+<form method="post">
+  <input type="text" name="titulo" value="{{ anuncio[1] }}" required>
+  <input type="number" step="0.01" name="ganho" value="{{ anuncio[2] }}" required>
+  <input type="submit" value="Salvar">
+</form>
+<a href="{{ url_for('painel') }}">Voltar</a>
